@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -32,13 +33,6 @@ export default function Login() {
           <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
             Iniciar Sesión
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            Credenciales de prueba:
-            <br />
-            Email: admin@example.com
-            <br />
-            Password: password123
-          </p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
@@ -73,6 +67,15 @@ export default function Login() {
           <Button type="submit" className="w-full">
             Iniciar Sesión
           </Button>
+
+          <div className="flex justify-between text-sm">
+            <Link href="/register" className="text-primary hover:underline">
+              Crear cuenta
+            </Link>
+            <Link href="/recover-password" className="text-primary hover:underline">
+              ¿Olvidaste tu contraseña?
+            </Link>
+          </div>
         </form>
       </div>
     </div>
